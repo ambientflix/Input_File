@@ -1,10 +1,34 @@
 package sb_example.sb;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Keywords {
+public class Words {
     //String arraylist
     private List<String> keywords = new ArrayList<String>();
+    private int weight;
+
+    public Words() {
+        weight = 0;
+
+    }
+
+    public List<String> getkeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(List<String> value) {
+        this.keywords = value;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int value) {
+        weight = value;
+    }
+
 }
 //get()
 //set()
