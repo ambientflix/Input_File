@@ -36,7 +36,7 @@ public class SbApplication {
      public static void main(String[] args) throws IOException
          {
              SpringApplication.run(SbApplication.class, args);
-             String fileName = "config/test_1.txt";
+
             File words = getwords();
             if (words.exists()){
                 System.out.println("Eureka!");
@@ -50,13 +50,19 @@ public class SbApplication {
     //continuously prompts user to input path for txt file
 
 
+    public SbApplication(ResourceLoader resourceLoader) {
+         SbApplication.resourceLoader = resourceLoader;
+    }
 
-        public static File getwords() throws IOException {
+    public static File getwords() throws IOException {
 
             Resource resource = resourceLoader.getResource("classpath:static/test_1.txt");
             InputStream dbAsStream = resource.getInputStream();
             return resource.getFile();
         }
+
+
+
             //grabs keywords from txt file and adds to ArrayList in order to have a dynamic array.
             public static ArrayList<String> getKeywords(File inputFile, Scanner fileScan){
                 ArrayList<String> keywords = new ArrayList<String>();
