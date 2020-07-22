@@ -29,6 +29,16 @@ public class Words {
         weight = value;
     }
 
+    public void addWords(String words) {
+        keywords.add(words);
+    }
+
+    public void printWords() {
+        for (String name : keywords) {
+            System.out.println(name);
+        }
+    }
+
 }
 //get()
 //set()
